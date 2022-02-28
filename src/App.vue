@@ -6,6 +6,7 @@ import MainUrlList from './components/MainUrlList.vue'
 <template>
   <div id='container'>
     <main-url-list></main-url-list>
+    <main-url-list></main-url-list>
   </div>
 </template>
 

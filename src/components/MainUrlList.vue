@@ -1,16 +1,18 @@
 <script setup lang='ts'>
-import {computed, ref} from 'vue'
+import {ref} from 'vue'
 import {useMainStore} from '../stores/mainUrl'
 import ColumnList from './column-list/ColumnList.vue'
 import urlUtil from '../funs/urlUtil'
 import commonUtil from '../funs/commonUtil'
+import {UrlParam} from '../type/UrlParam'
 
 const mainStore = useMainStore()
 
 const url = ref<string>('')
-const list = computed(() => mainStore.mainParamList)
+const list = ref<UrlParam[]>([])
 const onAnalysisClick = () => {
   const paramList = urlUtil.analysisUrl(url.value)
+  list.value = paramList
   mainStore.setMainParamList(paramList)
 }
 const onRecreateClick = () => {
@@ -33,7 +35,7 @@ const onRecreateClick = () => {
   </div>
 </template>
 
-<style scope lang='less'>
+<style lang='less'>
 .list-container {
   display: flex;
   justify-content: center;

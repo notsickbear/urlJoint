@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import ColumnList from './components/column-list/ColumnList.vue'
-import {ref} from 'vue'
 import MainUrlList from './components/MainUrlList.vue'
 
 </script>
@@ -20,6 +18,10 @@ body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+textarea {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 
 #container {

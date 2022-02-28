@@ -13,8 +13,8 @@ const props = defineProps({
 <template>
   <div class="list-main-container">
     <div v-for="(item) in list" :key="item.key" class="list-item">
-      <div class="list-item-key">{{ item.key }}</div>
-      <input class="list-item-value" v-model='item.value'/>
+      <textarea class="list-item-key" v-model='item.key'/>
+      <textarea class="list-item-value" v-model='item.value'/>
     </div>
   </div>
 </template>

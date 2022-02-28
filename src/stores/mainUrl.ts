@@ -1,7 +1,7 @@
 import {defineStore} from 'pinia';
 import {UrlParam} from '../type/UrlParam';
 
-export const useMainUrlStore = defineStore({
+export const useMainStore = defineStore({
   id: 'mainUrl',
   state: (): {
     mainParamList: UrlParam[],

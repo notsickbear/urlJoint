@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import {PropType} from 'vue'
+import {UrlParam} from '../../type/UrlParam'
+
 const props = defineProps({
   list: {
-    type: Array,
+    type: Array as PropType<UrlParam[]>,
     default: () => []
   }
 })

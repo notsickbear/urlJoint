@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import MainUrlList from './components/MainUrlList.vue'
+import MainUrlList from './components/UrlList.vue'
 
 </script>
 
 <template>
   <div id='container'>
-    <main-url-list></main-url-list>
-    <main-url-list></main-url-list>
+    <main-url-list list-id='main'></main-url-list>
+    <main-url-list list-id='sub'></main-url-list>
   </div>
 </template>
 
@@ -19,6 +19,7 @@ body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 20px;
 }
 
 textarea {

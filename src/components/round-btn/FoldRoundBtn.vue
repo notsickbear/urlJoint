@@ -28,27 +28,28 @@ const fold = () => (isUnfold.value = false)
 
 <style lang='less' scoped>
 .fold-btn-area {
+  font-size: 14px;
   padding: 1px;
   display: flex;
   flex-direction: row-reverse;
   border-radius: 10px;
-  background: antiquewhite;
-  color: black;
+  background: #4c4c4c;
+  color: white;
   cursor: pointer;
+  user-select: none;
 }
 
 .fold-text {
-  font-size: 14px;
   padding: 0 .2em;
   border-radius: inherit;
 }
 
 .round-btn {
-  font-size: 16px;
   height: 20px;
   width: 20px;
   border-radius: 10px;
   background: #4faffd;
+  color: white;
   display: flex;
 }
 </style>

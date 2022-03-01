@@ -27,6 +27,8 @@ const deleteKey = (key: string) => {
 const setAllParam = (param: UrlParam) => {
   mainStore.setOtherParam(param)
 }
+
+const addNewParam = () => {props.list.push({key: '', value: ''})}
 </script>
 
 <template>
@@ -34,13 +36,18 @@ const setAllParam = (param: UrlParam) => {
     <div v-for='(item) in list' :key='item.key' class='list-item'
          :class='{unActive: selectKey && item.key !== selectKey}'
          @mouseenter.stop='setSelectKey(item.key)' @mouseleave.stop='setSelectKey()'>
+      <!-- 参数键名 -->
       <textarea class='list-item-key' v-model='item.key' @blur.stop='setSelectKey(item.key)' />
+      <!-- 参数值 -->
       <textarea class='list-item-value' v-model='item.value' />
+      <!-- 侧边功能按钮 -->
       <div class='fold-btns-area' v-show='selectKey && item.key === selectKey'>
         <fold-round-btn class='btn' text='删除这个参数' @click='deleteKey(item.key)'/>
         <fold-round-btn class='btn' text='应用到所有相同键名的参数' @click='setAllParam(item)'/>
       </div>
     </div>
+    <!-- 新增 -->
+    <div class='list-item add-item' @click.stop='addNewParam'><span>+</span></div>
   </div>
 </template>
 

@@ -1,18 +1,22 @@
 <script setup lang="ts">
-import MainUrlList from './components/UrlList.vue'
+import UrlList from './components/UrlList.vue'
 
 </script>
 
 <template>
   <div id='container'>
-    <main-url-list list-id='main'></main-url-list>
-    <main-url-list list-id='sub'></main-url-list>
+    <url-list list-id='main'></url-list>
+    <url-list list-id='sub'></url-list>
   </div>
 </template>
 
 <style>
 body {
   background: #000000CC;
+}
+
+* {
+  position: relative;
 }
 
 #app {

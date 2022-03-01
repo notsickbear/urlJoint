@@ -5,12 +5,9 @@ import ColumnList from './column-list/ColumnList.vue'
 import urlUtil from '../funs/urlUtil'
 import commonUtil from '../funs/commonUtil'
 import {UrlParam} from '../type/UrlParam'
-const props = defineProps({
-  listId: {
-    type: String,
-    required: true
-  }
-})
+const props = defineProps<{
+  listId: string
+}>()
 
 const mainStore = useMainStore()
 
@@ -41,7 +38,7 @@ const onRecreateClick = () => {
   </div>
 </template>
 
-<style lang='less'>
+<style lang='less' scoped>
 .list-container {
   display: flex;
   justify-content: center;

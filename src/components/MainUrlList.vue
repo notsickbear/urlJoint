@@ -5,6 +5,12 @@ import ColumnList from './column-list/ColumnList.vue'
 import urlUtil from '../funs/urlUtil'
 import commonUtil from '../funs/commonUtil'
 import {UrlParam} from '../type/UrlParam'
+const props = defineProps({
+  listId: {
+    type: String,
+    required: true
+  }
+})
 
 const mainStore = useMainStore()
 
@@ -13,7 +19,7 @@ const list = ref<UrlParam[]>([])
 const onAnalysisClick = () => {
   const paramList = urlUtil.analysisUrl(url.value)
   list.value = paramList
-  mainStore.setMainParamList(paramList)
+  mainStore.setParamList(props.listId, paramList)
 }
 const onRecreateClick = () => {
   const newUrl = urlUtil.recreateUrl(url.value, list.value)
@@ -24,10 +30,10 @@ const onRecreateClick = () => {
 <template>
   <div class='list-container'>
     <!-- 输入框 -->
-    <input type='text' class='url-input' v-model='url' aria-placeholder='在这里输入链接'/>
+    <input type='text' class='url-input' v-model='url' aria-placeholder='在这里输入链接' @blur='onAnalysisClick'/>
     <!-- 功能按键 -->
     <div class='button-area'>
-      <button @click.stop='onAnalysisClick'>解析旧链接</button>
+      <button @click.stop='onAnalysisClick'>重新解析旧链接</button>
       <button @click.stop='onRecreateClick'>生成新链接并复制</button>
     </div>
     <!-- 参数列表 -->

@@ -4,24 +4,24 @@ import {UrlParam} from '../type/UrlParam';
 export const useMainStore = defineStore({
   id: 'mainUrl',
   state: (): {
-    mainParamList: UrlParam[],
-    paramKeyIndexMap: Map<string, number>
+    paramListMap: Map<string, UrlParam[]>,
+    selectKey: string | undefined
   } => ({
-    mainParamList: [],
-    paramKeyIndexMap: new Map<string, number>()
+    paramListMap: new Map<string, UrlParam[]>(),
+    selectKey: undefined
   }),
   actions: {
-    setMainParamList (list: UrlParam[]): void {
-      this.mainParamList = list
-      this.paramKeyIndexMap.clear()
-      list.forEach((param, index) => {
-        this.paramKeyIndexMap.set(param.key, index)
-      })
+    setParamList (listId: string, list: UrlParam[]): void {
+      this.paramListMap.set(listId, list);
     },
-    setMainParam (param: UrlParam): void {
-      const index = this.paramKeyIndexMap.get(param.key)
-      if (index && index > -1) this.mainParamList[index] = param
-      else this.mainParamList.push(param)
+    setOtherParam (param: UrlParam): void {
+      this.paramListMap.forEach((paramList) => {
+        const index = paramList.findIndex((oldParam) => oldParam.key === param.key)
+        if (index > -1) paramList[index] = param
+        })
+    },
+    setSelectKey (key: string | undefined) {
+      this.selectKey = key;
     }
   }
 })

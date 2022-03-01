@@ -29,5 +29,6 @@ textarea {
   width: 80%;
   display: flex;
   justify-content: space-around;
+  align-items: flex-start;
 }
 </style>

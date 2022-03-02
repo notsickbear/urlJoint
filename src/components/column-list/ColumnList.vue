@@ -43,7 +43,7 @@ const addNewParam = () => {props.list.push({key: '', value: ''})}
       <!-- 侧边功能按钮 -->
       <div class='fold-btns-area' v-show='selectKey && item.key === selectKey'>
         <fold-round-btn class='btn' text='删除这个参数' @click='deleteKey(item.key)'/>
-        <fold-round-btn class='btn' text='应用到所有相同键名的参数' @click='setAllParam(item)'/>
+        <fold-round-btn class='btn' text='应用到所有同名参数' @click='setAllParam(item)'/>
       </div>
     </div>
     <!-- 新增 -->

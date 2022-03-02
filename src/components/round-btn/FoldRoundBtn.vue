@@ -28,11 +28,10 @@ const fold = () => (isUnfold.value = false)
 
 <style lang='less' scoped>
 .fold-btn-area {
-  font-size: 14px;
   padding: 1px;
   display: flex;
   flex-direction: row-reverse;
-  border-radius: 10px;
+  border-radius: 13px;
   background: #4c4c4c;
   color: white;
   cursor: pointer;
@@ -40,16 +39,20 @@ const fold = () => (isUnfold.value = false)
 }
 
 .fold-text {
+  font-size: 14px;
   padding: 0 .2em;
   border-radius: inherit;
 }
 
 .round-btn {
-  height: 20px;
-  width: 20px;
-  border-radius: 10px;
+  font-size: 16px;
+  height: 24px;
+  width: 24px;
+  border-radius: 12px;
   background: #4faffd;
   color: white;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

@@ -75,7 +75,11 @@ const clearUrl = () => {
     transform: translateY(-50%);
     color: #4c4c4c;
     opacity: .5;
-    transition: opacity .5s ease;
+    transition: opacity .5s ease, transform .1s;
+
+    &:active {
+      transform: translate(2px, calc(-50% + 2px));
+    }
 
     &:hover {
       opacity: 1;
@@ -90,6 +94,11 @@ const clearUrl = () => {
     margin: .4em 1em;
     border-radius: 8px;
     font-size: 20px;
+    transition: transform .1s;
+
+    &:active {
+      transform: translate(2px, 2px);
+    }
   }
 }
 </style>

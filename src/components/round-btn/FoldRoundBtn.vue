@@ -37,6 +37,11 @@ const fold = () => (isUnfold.value = false)
   color: white;
   cursor: pointer;
   user-select: none;
+  transition: transform .1s;
+
+  &:active {
+    transform: translate(2px, 2px);
+  }
 }
 
 .fold-text {

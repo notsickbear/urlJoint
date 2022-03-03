@@ -31,6 +31,7 @@ const fold = () => (isUnfold.value = false)
   padding: 1px;
   display: flex;
   flex-direction: row-reverse;
+  flex-grow: 0;
   border-radius: 13px;
   background: #4c4c4c;
   color: white;
@@ -40,8 +41,11 @@ const fold = () => (isUnfold.value = false)
 
 .fold-text {
   font-size: 14px;
-  padding: 0 .2em;
+  padding: 0 .6em;
   border-radius: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .round-btn {

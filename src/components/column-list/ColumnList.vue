@@ -41,10 +41,12 @@ const addNewParam = () => {props.list.push({key: '', value: ''})}
       <!-- 参数值 -->
       <textarea class='list-item-value' v-model='item.value' />
       <!-- 侧边功能按钮 -->
-      <div class='fold-btns-area' v-show='selectKey && item.key === selectKey'>
-        <fold-round-btn class='btn' text='删除这个参数' @click='deleteKey(item.key)'/>
-        <fold-round-btn class='btn' text='应用到所有同名参数' @click='setAllParam(item)'/>
-      </div>
+      <transition name='fold-btns'>
+        <div class='fold-btns-area' v-show='selectKey && item.key === selectKey'>
+          <fold-round-btn class='btn' text='删除这个参数' @click='deleteKey(item.key)'/>
+          <fold-round-btn class='btn' text='应用到所有同名参数' @click='setAllParam(item)'/>
+        </div>
+      </transition>
     </div>
     <!-- 新增 -->
     <div class='list-item add-item' @click.stop='addNewParam'><span>+</span></div>

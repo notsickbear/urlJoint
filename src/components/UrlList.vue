@@ -32,7 +32,7 @@ const clearUrl = () => {
   <div class='list-container'>
     <!-- 输入框 -->
     <div class='input-area'>
-      <input type='text' class='url-input' v-model='url' aria-placeholder='在这里输入链接' @blur='onAnalysisClick' />
+      <input type='text' class='url-input' v-model='url' placeholder='在这里贴入想要修改参数的网页链接' @blur='onAnalysisClick' />
       <div class='clear-btn' @click.stop='clearUrl'>X</div>
     </div>
     <!-- 功能按键 -->

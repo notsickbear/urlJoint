@@ -5,6 +5,7 @@ import ColumnList from './column-list/ColumnList.vue'
 import urlUtil from '../funs/urlUtil'
 import commonUtil from '../funs/commonUtil'
 import {UrlParam} from '../type/UrlParam'
+
 const props = defineProps<{
   listId: string
 }>()
@@ -22,12 +23,18 @@ const onRecreateClick = () => {
   const newUrl = urlUtil.recreateUrl(url.value, list.value)
   commonUtil.copyTextToClipBoard(newUrl)
 }
+const clearUrl = () => {
+  url.value = ''
+}
 </script>
 
 <template>
   <div class='list-container'>
     <!-- 输入框 -->
-    <input type='text' class='url-input' v-model='url' aria-placeholder='在这里输入链接' @blur='onAnalysisClick'/>
+    <div class='input-area'>
+      <input type='text' class='url-input' v-model='url' aria-placeholder='在这里输入链接' @blur='onAnalysisClick' />
+      <div class='clear-btn' @click.stop='clearUrl'>X</div>
+    </div>
     <!-- 功能按键 -->
     <div class='button-area'>
       <button @click.stop='onAnalysisClick'>重新解析旧链接</button>
@@ -46,16 +53,33 @@ const onRecreateClick = () => {
   flex-direction: column;
 }
 
-.url-input {
-  border: #00000077 1px solid;
-  padding: .4em .5em;
-  border-radius: 8px;
-  font-size: 20px;
-  margin-bottom: .4em;
-  width: 500px;
+.input-area {
+  margin-bottom: .4rem;
 
-  ::-webkit-scrollbar {
-    display: none;
+  .url-input {
+    font-size: 20px;
+    border: #00000077 1px solid;
+    padding: .4rem 2.5rem .4rem .5rem;
+    border-radius: .4rem;
+    width: 500px;
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .clear-btn {
+    position: absolute;
+    right: .5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4c4c4c;
+    opacity: .5;
+    transition: opacity .5s ease;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 

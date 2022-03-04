@@ -28,12 +28,12 @@ const setAllParam = (param: UrlParam) => {
   mainStore.setOtherParam(param)
 }
 
-const addNewParam = () => {props.list.push({key: '', value: ''})}
+const addNewParam = () => {props.list.push({id: props.list.length + 1, key: '', value: ''})}
 </script>
 
 <template>
   <div class='list-main-container'>
-    <div v-for='(item) in list' :key='item.key' class='list-item'
+    <div v-for='(item) in list' :key='item.id' class='list-item'
          :class='{unActive: selectKey && item.key !== selectKey}'
          @mouseenter.stop='setSelectKey(item.key)' @mouseleave.stop='setSelectKey()'>
       <!-- 参数键名 -->

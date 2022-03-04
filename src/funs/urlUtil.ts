@@ -5,6 +5,7 @@ export default {
   analysisUrl (url: string): UrlParam[] {
     return url.split('?')[1].split('&')
       .map((param, paramIndex) => {
+        // 一些参数内部可能含有 =，不能用 split
         const index = param.indexOf('=')
         return {
           id: paramIndex,
@@ -16,6 +17,10 @@ export default {
   },
   // 重组链接
   recreateUrl (url: string, list: UrlParam[]): string {
-    return url.split('?')[0] + '?' + list.map((param) => param.key + '=' + param.value).join('&')
+    const paramStr = [...list]
+      .sort((a, b) => a.id - b.id)
+      .map((param) => param.key + '=' + param.value)
+      .join('&')
+    return url.split('?')[0] + '?' + paramStr
   }
 }

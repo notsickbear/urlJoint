@@ -76,6 +76,7 @@ const clearUrl = () => {
     color: #4c4c4c;
     opacity: .5;
     transition: opacity .5s ease, transform .1s;
+    user-select: none;
 
     &:active {
       transform: translate(2px, calc(-50% + 2px));

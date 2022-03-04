@@ -76,6 +76,7 @@ const clearUrl = () => {
     color: #4c4c4c;
     opacity: .5;
     transition: opacity .5s ease, transform .1s;
+    cursor: pointer;
     user-select: none;
 
     &:active {
@@ -91,14 +92,22 @@ const clearUrl = () => {
 .button-area {
   button {
     border: #00000077 1px solid;
+    background: #4c4c4c;
+    color: #e5dcdc;
     padding: .2em .5em;
     margin: .4em 1em;
     border-radius: 8px;
     font-size: 20px;
     transition: transform .1s;
+    cursor: pointer;
+    user-select: none;
 
     &:active {
       transform: translate(2px, 2px);
+    }
+
+    &:hover {
+      background: #737373;
     }
   }
 }

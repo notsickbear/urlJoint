@@ -1,8 +1,7 @@
+@import "src/common-less/flex.less";
+
 .list-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  .mixins-column-flex();
 }
 
 .list-header {
@@ -17,11 +16,8 @@
   border-radius: .4rem;
   padding: .4rem 1.2rem;
   box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   width: 500px;
+  .mixins-column-flex();
 }
 
 .list-item {
@@ -127,11 +123,11 @@
     right: -2rem;
     top: -10%;
     padding-left: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-end;
     transition: transform .5s ease, opacity .5s ease;
+    .mixins-column-flex(
+      @justify-content: space-around,
+      @align-items: flex-end
+    );
   }
 
   .fold-btns-enter-from,

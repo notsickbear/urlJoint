@@ -11,25 +11,7 @@ import UrlList from './components/UrlList.vue'
 </template>
 
 <style>
-body {
-  background: #000000CC;
-}
-
-* {
-  position: relative;
-}
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 20px;
-}
-
-textarea {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-}
-
+@import "common-less/golbal.less";
 #container {
   width: 80%;
   display: flex;

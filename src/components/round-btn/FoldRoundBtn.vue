@@ -27,6 +27,8 @@ const fold = () => (isUnfold.value = false)
 </template>
 
 <style lang='less' scoped>
+@import "src/common-less/flex.less";
+@import "src/common-less/btn.less";
 .fold-btn-area {
   padding: 1px;
   display: flex;
@@ -35,22 +37,14 @@ const fold = () => (isUnfold.value = false)
   border-radius: 13px;
   background: #4c4c4c;
   color: white;
-  cursor: pointer;
-  user-select: none;
-  transition: transform .1s;
-
-  &:active {
-    transform: translate(2px, 2px);
-  }
+  .mixins-btn();
 }
 
 .fold-text {
   font-size: 14px;
   padding: 0 .6em;
   border-radius: inherit;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  .mixins-flex-display();
 }
 
 .round-btn {
@@ -60,8 +54,6 @@ const fold = () => (isUnfold.value = false)
   border-radius: 12px;
   background: #4faffd;
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  .mixins-flex-display();
 }
 </style>

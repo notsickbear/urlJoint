@@ -1,0 +1,13 @@
+.mixins-btn (@xTransform: 2px; @yTransform: 2px) {
+  cursor: pointer;
+  user-select: none;
+  transition: opacity .5s ease, transform .1s;
+
+  &:active {
+    transform: translate(@xTransform, @yTransform);
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}

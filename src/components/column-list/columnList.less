@@ -1,4 +1,5 @@
 @import "src/common-less/flex.less";
+@import "src/common-less/scrollbar.less";
 
 .list-container {
   .mixins-column-flex();
@@ -54,23 +55,7 @@
     word-break: break-all;
     border: 0;
     resize: none;
-
-    &::-webkit-scrollbar {
-      width: .3rem;
-      border-radius: .3rem;
-      background: #e5dcdc;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      width: .2rem;
-      border-radius: .2rem;
-      background: white;
-    }
-
-    &::-webkit-scrollbar-corner,
-    &::-webkit-scrollbar-button {
-      display: none;
-    }
+    .mixins-scrollbar();
   }
 
   .list-item-key {
@@ -87,34 +72,28 @@
     font-size: 16px;
   }
 
-  &:nth-of-type(3n+1) {
-    .list-item-key {
-      background: #3374ac;
-    }
+  #mixins-column-list {
+    .mixins-list-color (@key-color; @value-color) {
+      .list-item-key {
+        background:@key-color;
+      }
 
-    .list-item-value {
-      background: #4faffd;
+      .list-item-value {
+        background: @value-color;
+      }
     }
+  }
+
+  &:nth-of-type(3n+1) {
+    #mixins-column-list.mixins-list-color(#3374ac; #4faffd)
   }
 
   &:nth-of-type(3n+2) {
-    .list-item-key {
-      background: #0a6a20;
-    }
-
-    .list-item-value {
-      background: #2bc689;
-    }
+    #mixins-column-list.mixins-list-color(#0a6a20; #2bc689)
   }
 
   &:nth-of-type(3n) {
-    .list-item-key {
-      background: #985907;
-    }
-
-    .list-item-value {
-      background: #e38e04;
-    }
+    #mixins-column-list.mixins-list-color(#985907; #e38e04)
   }
 
   .fold-btns-area {
@@ -125,7 +104,7 @@
     padding-left: 2rem;
     transition: transform .5s ease, opacity .5s ease;
     .mixins-column-flex(
-      @justify-content: space-around,
+      @justify-content: space-around;
       @align-items: flex-end
     );
   }

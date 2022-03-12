@@ -46,11 +46,11 @@ const clearUrl = () => {
 </template>
 
 <style lang='less' scoped>
+@import "src/common-less/btn.less";
+@import "src/common-less/flex.less";
+@import "src/common-less/scrollbar.less";
 .list-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  .mixins-column-flex();
 }
 
 .input-area {
@@ -62,10 +62,7 @@ const clearUrl = () => {
     padding: .4rem 2.5rem .4rem .5rem;
     border-radius: .4rem;
     width: 500px;
-
-    ::-webkit-scrollbar {
-      display: none;
-    }
+    .mixins-no-scrollbar();
   }
 
   .clear-btn {
@@ -75,17 +72,7 @@ const clearUrl = () => {
     transform: translateY(-50%);
     color: #4c4c4c;
     opacity: .5;
-    transition: opacity .5s ease, transform .1s;
-    cursor: pointer;
-    user-select: none;
-
-    &:active {
-      transform: translate(2px, calc(-50% + 2px));
-    }
-
-    &:hover {
-      opacity: 1;
-    }
+    .mixins-btn(2px; calc(-50% + 2px));
   }
 }
 
@@ -98,13 +85,7 @@ const clearUrl = () => {
     margin: .4em 1em;
     border-radius: 8px;
     font-size: 20px;
-    transition: transform .1s;
-    cursor: pointer;
-    user-select: none;
-
-    &:active {
-      transform: translate(2px, 2px);
-    }
+    .mixins-btn();
 
     &:hover {
       background: #737373;

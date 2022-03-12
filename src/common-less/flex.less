@@ -1,7 +1,7 @@
 // 水平方向的 flex 布局，有两个参数
 // @justify-content 决定 justify-content，默认 center
 // @align-items 决定 align-items，默认 center
-.mixins-flex-display(@justify-content: center, @align-items: center) {
+.mixins-flex-display(@justify-content: center; @align-items: center) {
   display: flex;
   justify-content: @justify-content;
   align-items: @align-items;
@@ -10,7 +10,7 @@
 // 竖直方向的 flex 布局，有两个参数
 // @justify-content 决定 justify-content，默认 center
 // @align-items 决定 align-items，默认 center
-.mixins-column-flex(@justify-content: center, @align-items: center) {
-  .mixins-flex-display(@justify-content, @align-items);
+.mixins-column-flex(@justify-content: center; @align-items: center) {
+  .mixins-flex-display(@justify-content; @align-items);
   flex-direction: column;
 }

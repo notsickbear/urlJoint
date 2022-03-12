@@ -1,0 +1,24 @@
+.mixins-scrollbar (@width: 5px; @color: #e5dcdc; @thumb-color: white) {
+  &::-webkit-scrollbar {
+    width: @width;
+    border-radius: @width * .5;
+    background: @color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: @width * .6;
+    border-radius: @width * .3;
+    background: @thumb-color;
+  }
+
+  &::-webkit-scrollbar-corner,
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+}
+
+.mixins-no-scrollbar () {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

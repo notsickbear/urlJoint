@@ -33,6 +33,7 @@ const addNewParam = () => {props.list.push({id: props.list.length + 1, key: '', 
 
 <template>
   <div class='list-main-container'>
+    <!-- 列表部分 -->
     <div v-for='(item) in list' :key='item.id' class='list-item'
          :class='{unActive: selectKey && item.key !== selectKey}'
          @mouseenter.stop='setSelectKey(item.key)' @mouseleave.stop='setSelectKey()'>

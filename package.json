@@ -19,6 +19,7 @@
     "vue-tsc": "^0.32.1",
     "@vitejs/plugin-vue": "^2.0.0",
     "vant": "^3.4.5",
+    "vue-router": "^4.0.14",
     "vite-plugin-style-import": "^2.0.0-beta.1",
     "consola": "^2.15.3",
     "pinia": "^2.0.11"

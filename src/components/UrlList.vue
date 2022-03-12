@@ -5,6 +5,7 @@ import ColumnList from './column-list/ColumnList.vue'
 import urlUtil from '../funs/urlUtil'
 import commonUtil from '../funs/commonUtil'
 import {UrlParam} from '../type/UrlParam'
+import {Notify} from 'vant'
 
 const props = defineProps<{
   listId: string
@@ -22,6 +23,7 @@ const onAnalysisClick = () => {
 const onRecreateClick = () => {
   const newUrl = urlUtil.recreateUrl(url.value, list.value)
   commonUtil.copyTextToClipBoard(newUrl)
+      .then(() => Notify({ type: 'success', message: '复制成功'}))
 }
 const clearUrl = () => {
   url.value = ''

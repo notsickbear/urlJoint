@@ -37,6 +37,7 @@ const fold = () => (isUnfold.value = false)
   border-radius: 13px;
   background: #4c4c4c;
   color: white;
+  z-index: 1;
   .mixins-btn();
 }
 

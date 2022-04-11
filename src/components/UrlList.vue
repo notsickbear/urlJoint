@@ -15,16 +15,19 @@ const mainStore = useMainStore()
 
 const url = ref<string>('')
 const list = ref<UrlParam[]>([])
+// 重新解析旧链接，覆盖可能修改过的参数列表
 const onAnalysisClick = () => {
   const paramList = urlUtil.analysisUrl(url.value)
   list.value = paramList
   mainStore.setParamList(props.listId, paramList)
 }
+// 根据参数列表重新生成新链接并复制
 const onRecreateClick = () => {
   const newUrl = urlUtil.recreateUrl(url.value, list.value)
   commonUtil.copyTextToClipBoard(newUrl)
-      .then(() => Notify({ type: 'success', message: '复制成功'}))
+      .then(() => Notify({ type: 'success', message: '复制新 url 成功'}))
 }
+// 清空链接
 const clearUrl = () => {
   url.value = ''
 }

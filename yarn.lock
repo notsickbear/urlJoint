@@ -190,6 +190,11 @@
     "@vue/compiler-dom" "3.2.31"
     "@vue/shared" "3.2.31"
 
+"@vue/devtools-api@^6.0.0":
+  version "6.1.4"
+  resolved "http://code.123kanfang.com:4873/@vue%2fdevtools-api/-/devtools-api-6.1.4.tgz#b4aec2f4b4599e11ba774a50c67fa378c9824e53"
+  integrity sha512-IiA0SvDrJEgXvVxjNkHPFfDx6SXw0b/TUkqMcDZWNg9fnCAHbTpoo59YfJ9QLFkwa3raau5vSlRVzMSLDnfdtQ==
+
 "@vue/devtools-api@^6.0.0-beta.21":
   version "6.0.6"
   resolved "http://code.123kanfang.com:4873/@vue%2fdevtools-api/-/devtools-api-6.0.6.tgz#4bf8bfe8f14f73c614d9baeaa275fe3cd1c799d6"
@@ -1274,6 +1279,13 @@ vue-demi@*:
   version "0.12.1"
   resolved "http://code.123kanfang.com:4873/vue-demi/-/vue-demi-0.12.1.tgz#f7e18efbecffd11ab069d1472d7a06e319b4174c"
   integrity sha512-QL3ny+wX8c6Xm1/EZylbgzdoDolye+VpCXRhI2hug9dJTP3OUJ3lmiKN3CsVV3mOJKwFi0nsstbgob0vG7aoIw==
+
+vue-router@^4.0.15:
+  version "4.0.15"
+  resolved "http://code.123kanfang.com:4873/vue-router/-/vue-router-4.0.15.tgz#b4a0661efe197f8c724e0f233308f8776e2c3667"
+  integrity sha512-xa+pIN9ZqORdIW1MkN2+d9Ui2pCM1b/UMgwYUCZOiFYHAvz/slKKBDha8DLrh5aCG/RibtrpyhKjKOZ85tYyWg==
+  dependencies:
+    "@vue/devtools-api" "^6.0.0"
 
 vue-tsc@^0.32.1:
   version "0.32.1"

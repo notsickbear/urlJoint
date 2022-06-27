@@ -1,6 +1,6 @@
 {
   "name": "urljoint",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
@@ -17,6 +17,7 @@
     "vite": "^2.8.6",
     "vue": "^3.2.31",
     "vue-tsc": "^0.32.1",
+    "vue-router": "^4.0.15",
     "@vitejs/plugin-vue": "^2.0.0",
     "vant": "^3.4.5",
     "vue-router": "^4.0.14",

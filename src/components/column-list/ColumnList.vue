@@ -70,7 +70,7 @@ const pasteValue = (param: UrlParam) => {
       <transition name='fold-btns'>
         <div class='fold-btns-area' v-show='selectKey && item.key === selectKey'>
           <fold-round-btn class='btn' text='删除' @click='deleteKey(item.key)'/>
-          <fold-round-btn class='btn' text='同步值' @click='setAllParam(item)'/>
+          <fold-round-btn class='btn' text='设置值' @click='setAllParam(item)'/>
           <fold-round-btn class='btn' text='复制值' @click='copyValue(item.value)'/>
           <fold-round-btn class='btn' text='清空值' @click='item.value = ""'/>
           <fold-round-btn class='btn' text='粘贴并替换值' @click='pasteValue((item))'/>
